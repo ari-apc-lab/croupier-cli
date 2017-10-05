@@ -38,4 +38,4 @@ ADD check-ssh-keys.sh ./
 # Shared volume
 VOLUME ['/mso4sc']
 
-ENTRYPOINT ["/bin/bash"]
+CMD ["/bin/bash"]

@@ -15,7 +15,7 @@
 # limitations under the License.
 
 if [[ $# < 4 ]] ; then
-    echo 'Usage: '$0' <MANAGER_HOST> <MANGER_USER> <ADMIN_USER> <ADMIN_PASSWD>'
+    echo 'Usage: '$0' <ORCHESTRATOR_HOST> <ORCHESTRATOR_SSH_USER> <ADMIN_USER> <ADMIN_PASSWD>'
     exit 1
 fi
 
