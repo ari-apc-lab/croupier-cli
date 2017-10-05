@@ -35,6 +35,9 @@ ADD ./bootstrap-manager.sh ./
 RUN mkdir ~/.ssh
 ADD check-ssh-keys.sh ./
 
+# Set all scripts as executables
+RUN chmod +x ./*.sh
+
 # Shared volume
 VOLUME ['/mso4sc']
 
