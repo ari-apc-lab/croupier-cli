@@ -14,5 +14,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-docker run -it --name cli mso4sc/msoorchestrator-cli
+docker run -it --rm --name cli mso4sc/msoorchestrator-cli
 

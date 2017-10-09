@@ -15,19 +15,20 @@
 # limitations under the License.
 
 ## Python2.7
-apt-get -y -q install python python-pip
+yum -y install epel-release
+yum -y install python-pip
 pip install --upgrade pip
 pip install virtualenv
 
 ## Cloudify CLI 17.3.1
-#wget -q http://repository.cloudifysource.org/cloudify/17.3.31/release/cloudify_17.3.31~community_amd64.deb
+#wget -q http://repository.cloudifysource.org/cloudify/17.3.31/release/cloudify_17.3.31~community_amd64.rpm
 
 ## Cloudify CLI 17.6.30
-#wget -q http://repository.cloudifysource.org/cloudify/17.6.30/community-release/cloudify-community-cli-17.6.30.deb
+#wget -q http://repository.cloudifysource.org/cloudify/17.6.30/community-release/cloudify-community-cli-17.6.30.rpm
 
 ## Cloudify CLI 17.9.21
-wget -q http://repository.cloudifysource.org/cloudify/17.9.21/community-release/cloudify-cli-community-17.9.21.deb
+wget -q http://repository.cloudifysource.org/cloudify/17.9.21/community-release/cloudify-cli-community-17.9.21.rpm
 
 ## Install Cloudify CLI package
-dpkg -i cloudify-*.deb
-rm cloudify-*.deb
+rpm -Uvh cloudify-*.rpm
+rm cloudify-*.rpm

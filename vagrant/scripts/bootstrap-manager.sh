@@ -26,6 +26,10 @@ ssh-keyscan -H $1 >> ~/.ssh/known_hosts
 ssh-copy-id -i ~/.ssh/id_rsa $2@$1
 
 cd /opt/cfy/cloudify-manager-blueprints/
+if [ -f simple-manager-blueprint-inputs.yaml.bak ]; then
+    cp simple-manager-blueprint-inputs.yaml.bak simple-manager-blueprint-inputs.yaml
+fi
+cp simple-manager-blueprint-inputs.yaml simple-manager-blueprint-inputs.yaml.bak
 
 sed -i -e "s|public_ip: ''|public_ip: '$1'|g" ./simple-manager-blueprint-inputs.yaml
 sed -i -e "s|private_ip: ''|private_ip: '$1'|g" ./simple-manager-blueprint-inputs.yaml

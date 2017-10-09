@@ -23,10 +23,10 @@ pip install virtualenv
 #wget -q http://repository.cloudifysource.org/cloudify/17.3.31/release/cloudify_17.3.31~community_amd64.deb
 
 ## Cloudify CLI 17.6.30
-wget -q http://repository.cloudifysource.org/cloudify/17.6.30/community-release/cloudify-community-cli-17.6.30.deb
+#wget -q http://repository.cloudifysource.org/cloudify/17.6.30/community-release/cloudify-community-cli-17.6.30.deb
 
 ## Cloudify CLI 17.9.21
-#wget -q http://repository.cloudifysource.org/cloudify/17.9.21/community-release/cloudify-cli-community-17.9.21.deb
+wget -q http://repository.cloudifysource.org/cloudify/17.9.21/community-release/cloudify-cli-community-17.9.21.deb
 
 ## Install Cloudify CLI package
 dpkg -i cloudify-*.deb
