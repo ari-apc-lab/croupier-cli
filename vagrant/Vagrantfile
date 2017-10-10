@@ -38,8 +38,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "file", source: "scripts/check-ssh-keys.sh", destination: "/home/ubuntu/check-ssh-keys.sh"
   config.vm.provision "file", source: "scripts/bootstrap-manager.sh", destination: "/home/ubuntu/bootstrap-manager.sh"
-  config.vm.provision "shell", path: "scripts/basic-deps.sh"
-  config.vm.provision "shell", path: "scripts/cloudify-cli.sh"
+  config.vm.provision "shell", path: "scripts/ubuntu-basic-deps.sh"
+  config.vm.provision "shell", path: "scripts/ubuntu-python2.sh"
+  config.vm.provision "shell", path: "scripts/ubuntu-cloudify-cli.sh"
   config.vm.provision "shell", path: "scripts/set-permissions.sh"
   
   #HACK TO AVOID ttyname failed: Inappropiate ioctl for device

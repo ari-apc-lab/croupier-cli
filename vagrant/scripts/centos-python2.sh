@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Copyright 2017 MSO4SC - javier.carnero@atos.net
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,33 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM ubuntu:xenial
-
-LABEL maintainer="javier.carnero@atos.net"
-
-RUN mkdir /app
-WORKDIR /app
-
-# Basic dependencies
-RUN apt-get update
-RUN apt-get -y -q install apt-utils ntp wget openssh-client
-
-# Cloudify-cli
-ADD ./ubuntu-cloudify-cli.sh ./
-RUN /bin/bash ./ubuntu-cloudify-cli.sh
-RUN rm ./ubuntu-cloudify-cli.sh
-
-# Bootstrap script
-ADD ./bootstrap-manager.sh ./
-
-# SSH Keys
-RUN mkdir ~/.ssh
-ADD check-ssh-keys.sh ./
-
-# Set all scripts as executables
-RUN chmod +x ./*.sh
-
-# Shared volume
-VOLUME ['/mso4sc']
-
-CMD ["/bin/bash"]
+## Python2.7
+yum -y install epel-release
+yum -y install python-pip
+pip install --upgrade pip
+pip install virtualenv

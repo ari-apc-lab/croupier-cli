@@ -19,11 +19,26 @@ if [[ $# < 4 ]] ; then
     exit 1
 fi
 
+## SSH Keys management
 ./check-ssh-keys.sh
 
 ssh-keygen -R $1
 ssh-keyscan -H $1 >> ~/.ssh/known_hosts
 ssh-copy-id -i ~/.ssh/id_rsa $2@$1
+
+## Firewall config
+ssh $2@$1 <<'ENDSSH'
+    sudo firewall-cmd --zone=public --add-service=http
+    sudo firewall-cmd --zone=public --permanent --add-service=http
+    sudo firewall-cmd --zone=public --add-service=https
+    sudo firewall-cmd --zone=public --permanent --add-service=https
+    sudo firewall-cmd --zone=public --add-port=5671/tcp
+    sudo firewall-cmd --zone=public --permanent --add-port=5671/tcp
+    sudo firewall-cmd --zone=public --add-port=53229/tcp
+    sudo firewall-cmd --zone=public --permanent --add-port=53229/tcp
+    sudo firewall-cmd --zone=public --add-port=53333/tcp
+    sudo firewall-cmd --zone=public --permanent --add-port=53333/tcp
+ENDSSH
 
 cd /opt/cfy/cloudify-manager-blueprints/
 if [ -f simple-manager-blueprint-inputs.yaml.bak ]; then
