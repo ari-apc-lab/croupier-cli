@@ -24,7 +24,10 @@
 #wget -q http://repository.cloudifysource.org/cloudify/17.9.21/community-release/cloudify-cli-community-17.9.21.rpm
 
 ## Cloudify CLI 17.10.5
-wget -q http://repository.cloudifysource.org/cloudify/17.10.5/community-release/cloudify-cli-community-17.10.5.rpm
+#wget -q http://repository.cloudifysource.org/cloudify/17.10.5/community-release/cloudify-cli-community-17.10.5.rpm
+
+## Cloudify CLI 17.10.5
+wget -q http://repository.cloudifysource.org/cloudify/17.10.19/community-release/cloudify-cli-community-17.10.19.rpm
 
 ## Install Cloudify CLI package
 rpm -Uvh cloudify-*.rpm

@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM ubuntu:xenial
+FROM centos:7
 
 LABEL maintainer="javier.carnero@atos.net"
 
@@ -20,13 +20,14 @@ RUN mkdir /app
 WORKDIR /app
 
 # Basic dependencies
-RUN apt-get update
-RUN apt-get -y -q install apt-utils ntp wget openssh-client
+RUN yum -y update
+RUN yum -y install yum-utils wget openssh-clients ntp
+RUN yum clean all
 
 # Cloudify-cli
-ADD ./ubuntu-cloudify-cli.sh ./
-RUN /bin/bash ./ubuntu-cloudify-cli.sh
-RUN rm ./ubuntu-cloudify-cli.sh
+ADD ./centos-cloudify-cli.sh ./
+RUN /bin/bash ./centos-cloudify-cli.sh
+RUN rm ./centos-cloudify-cli.sh
 
 # Bootstrap script
 ADD ./bootstrap-manager.sh ./

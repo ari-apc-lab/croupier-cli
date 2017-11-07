@@ -26,6 +26,9 @@
 ## Cloudify CLI 17.10.5
 wget -q http://repository.cloudifysource.org/cloudify/17.10.5/community-release/cloudify-cli-community-17.10.5.deb
 
+## Cloudify CLI 17.10.19
+#wget -q http://repository.cloudifysource.org/cloudify/17.10.5/community-release/cloudify-cli-community-17.10.19.deb
+
 ## Install Cloudify CLI package
 dpkg -i cloudify-*.deb
 rm cloudify-*.deb
