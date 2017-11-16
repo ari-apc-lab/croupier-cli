@@ -1,0 +1,35 @@
+= MSOOrchestrator-CLI
+:uri-cloudify-cli: http://docs.getcloudify.org/4.1.0/cli/overview/
+:uri-cloudify-cli-install: http://docs.getcloudify.org/4.1.0/installation/from-packages/
+:uri-docker-image: https://hub.docker.com/r/mso4sc/msoorchestrator-cli/
+:uri-cfy-multitenancy: http://docs.getcloudify.org/4.1.0/manager/implement-multi-tenancy/
+
+Orchestration CLI of MSO4SC Project, based on Cloudify CLI. For more information, visit {uri-cloudify-cli}.
+
+
+== Installation
+
+MSOOrchestrator-CLI offers a vagrant file and a docker image to easily start using the command line. Besides it can be installed following {uri-cloudify-cli-install}[the docs].
+
+=== Docker
+
+At {uri-docker-image}[Docker Hub] you can find the latest build image to start using the CLI.
+
+=== Vagrant
+
+A vagrant file is provided at `/vagrant` folder to create a new Virtual Vox machine with the CLI inside.
+
+NOTE: Modify the path `"../../resources/blueprint-examples"` to bind the blueprint examples repository to your virtual machine. Comment the line if you don't want to bind the examples.
+
+
+== Usage
+
+MSOOrchestrator is deployed at 10.38.3.74 in CESGA Cloud infrastructure. To connect the CLI to the Orchestrator, run the following command with your user credentials.
+
+[source,shell]
+----
+cfy profile use 10.38.3.74 -u [USER] -p [PASS]
+cfy status
+----
+
+WARNING: Connection to CESGA Cloud need to have stablished a connection to the CESGA FortiClient SSLVPN first.
