@@ -28,7 +28,7 @@ MSOOrchestrator is deployed at 10.38.3.74 in CESGA Cloud infrastructure. To conn
 
 [source,shell]
 ----
-cfy profile use 10.38.3.74 -u [USER] -p [PASS]
+cfy profile use 10.38.3.74 -t default_tenant -u [USER] -p [PASS]
 cfy status
 ----
 
