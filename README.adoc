@@ -48,7 +48,7 @@ To connect to a MSOOrchestrator instance, run the following command with your us
 
 [source,shell]
 ----
-cfy profile use [IP] -u [USER] -p [PASS]
+cfy profile use [ORCHESTRATOR_IP] -t default_tenant -u [USER] -p [PASS]
 cfy status
 ----
 
