@@ -59,7 +59,9 @@ The MSO Orchestrator, based on cloudify, can be easily installed from this CLI.
 
 Requirements:
 * Running instance of MSOOrchestrator-CLI vagrant or docker image.
-* Centos 7 remote machine with at least 2 CPUs and 4 Gb of RAM (4 CPUs and 12 Gb RAM recommended), reachable by the CLI and with requiretty disabled in sudoers file.
+* Centos 7 remote machine with at least 2 CPUs and 4 Gb of RAM (4 CPUs and 12 Gb RAM recommended), reachable by the CLI, with requiretty disabled, and no password for sudo command.
+** Set `Defaults !requiretty` on sudoers file (`/etc/sudoers`)
+** If user is not root, `echo '[USER] ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers`
 
 To install the orchestrator, just execute in the CLI:+
 `./bootstrap-manager.sh [Centos HOST] [Centos SSH USER] [Orchestrator NEW ADMIN USER] [Orchestrator NEW ADMIN PASSWORD]`
