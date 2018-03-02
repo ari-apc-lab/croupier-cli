@@ -44,6 +44,23 @@ NOTE: Modify the path `"../../resources/blueprint-examples"` to bind the bluepri
 
 == Usage
 
+=== Local mode
+
+Orchestration CLI of MSO4SC Project, based on Cloudify CLI, allows you to execute your blueprints without connecting to the remote MSOOrchestrator instance.
+
+[source,shell]
+----
+ID=BLUEPRINT_ID
+cfy blueprints validate blueprint.yaml # Validate your blueprint
+cfy init --install-plugins -b $ID \
+    -i ../local-blueprint-inputs.yaml blueprint.yaml # Create a new local app instance
+cfy executions start -b $ID install # Bootstrap the app instance
+cfy executions start -b $ID run_jobs # Execute the app instance workflow
+cfy executions start -b $ID uninstall # Revert the app instance
+----
+
+=== Remote mode
+
 To connect to a MSOOrchestrator instance, run the following command with your user credentials and remote host or IP of the orchestrator. If you don't have an orchestrator instance yet, follow <<msoorchestrator-installation>> first.
 
 [source,shell]
@@ -51,6 +68,23 @@ To connect to a MSOOrchestrator instance, run the following command with your us
 cfy profile use [ORCHESTRATOR_IP] -t default_tenant -u [USER] -p [PASS]
 cfy status
 ----
+
+Once you are connected to the MSOOrchestrator, you can perform the usual Cloudify CLI workflow for install, run and uninstall your TOSCA based applications:
+
+[source,shell]
+----
+ID=MY_ID
+cfy blueprints upload -b $ID blueprint.yaml # Upload the blueprint
+cfy deployments create -b $ID \
+    -i ../local-blueprint-inputs.yaml $ID # Create the app instance
+cfy executions start -d $ID install # Bootstrap the app instance
+cfy executions start -d $ID run_jobs # Execute the app instance workflow
+cfy executions start -d $ID uninstall # Revert the app instance
+cfy deployments delete $ID # Remove the app instance
+cfy blueprints delete $ID # Remove the blueprint
+----
+
+You can find several examples and real applications in the https://github.com/MSO4SC/resources[resources respository @ Github]
 
 [msoorchestrator-installation]
 == MSOOrchestrator installation
