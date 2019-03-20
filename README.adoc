@@ -35,12 +35,21 @@ MSOOrchestrator-CLI offers a vagrant file and a docker image to easily start usi
 
 At {uri-docker-image}[Docker Hub] you can find the latest build image to start using the CLI.
 
+----
+# docker run -it --name cli -v <PATH>/resources:/cli/resources mso4sc/msoorchestrator-cli -- bash
+[root@ec71ada311d6 cli]# exit
+# docker start -ai cli
+[root@ec71ada311d6 cli]# exit
+----
+
+To build:
+`docker build -t mso4sc/msoorchestrator-cli .` 
+
 === Vagrant
 
-A vagrant file is provided at `/vagrant` folder to create a new Virtual Vox machine with the CLI inside.
+A vagrant file is provided to create a new Virtual Vox machine with the CLI inside.
 
-NOTE: Modify the path `"../../resources/blueprint-examples"` to bind the blueprint examples repository to your virtual machine. Comment the line if you don't want to bind the examples.
-
+NOTE: Modify the path `"../resources/blueprint-examples"` to bind the blueprint examples repository to your virtual machine. Comment the line if you don't want to bind the examples.
 
 == Usage
 

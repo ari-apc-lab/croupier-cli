@@ -14,5 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-chown -R ubuntu:ubuntu /opt/cfy/cloudify-manager-blueprints
-chmod +x /home/ubuntu/*.sh
+wget -q http://repository.cloudifysource.org/cloudify/19.01.24/community-release/cloudify-cli-community-19.01.24.rpm
+
+## Install Cloudify CLI package
+rpm -Uvh cloudify-*.rpm
+rm cloudify-*.rpm
+

@@ -23,8 +23,7 @@ Vagrant.configure("2") do |config|
   config.vm.network "private_network", ip: "192.168.56.10"
 #  config.vm.network "forwarded_port", guest: 8000, host: 8000
 
-  config.vm.synced_folder "../../resources/blueprint-examples", "/home/vagrant/blueprint-examples"
-#  config.vm.synced_folder "../../cloudify-hpc-plugin", "/home/ubuntu/cloudify-hpc-plugin"
+  config.vm.synced_folder "../../croupier-resources", "/home/vagrant/resources"
 
   config.vm.provider "virtualbox" do |vb|
 	# Not display the VirtualBox GUI when booting the machine
@@ -37,12 +36,12 @@ Vagrant.configure("2") do |config|
 	vb.customize ["guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 1000]
   end
 
-  config.vm.provision "file", source: "scripts/check-ssh-keys.sh", destination: "/home/vagrant/check-ssh-keys.sh"
-  config.vm.provision "file", source: "scripts/bootstrap-manager.sh", destination: "/home/vagrant/bootstrap-manager.sh"
-  config.vm.provision "shell", path: "scripts/centos-basic-deps.sh"
-  config.vm.provision "shell", path: "scripts/centos-python2.sh"
-  config.vm.provision "shell", path: "scripts/centos-cloudify-cli.sh"
-  config.vm.provision "shell", path: "scripts/centos-set-permissions.sh"
+  config.vm.provision "file", source: "./check-ssh-keys.sh", destination: "/home/vagrant/check-ssh-keys.sh"
+  config.vm.provision "file", source: "./bootstrap-manager.sh", destination: "/home/vagrant/bootstrap-manager.sh"
+  config.vm.provision "shell", path: "./centos-basic-deps.sh"
+  config.vm.provision "shell", path: "./centos-python2.sh"
+  config.vm.provision "shell", path: "./centos-cloudify-cli.sh"
+  config.vm.provision "shell", path: "./vagrant-set-permissions.sh"
   
   #HACK TO AVOID ttyname failed: Inappropiate ioctl for device
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
