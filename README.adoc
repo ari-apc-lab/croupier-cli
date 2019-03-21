@@ -23,6 +23,10 @@ endif::[]
 :uri-cloudify-cli-install: http://docs.getcloudify.org/4.1.0/installation/from-packages/
 :uri-docker-image: https://hub.docker.com/r/mso4sc/msoorchestrator-cli/
 :uri-cfy-multitenancy: http://docs.getcloudify.org/4.1.0/manager/implement-multi-tenancy/
+:uri-mso4sc: http://www.mso4sc.eu/
+:uri-original-repo: https://github.com/MSO4SC/MSOOrchestrator-CLI
+
+NOTE: Originally developed under the H2020 project {uri-mso4sc}[MSO4SC]: {uri-original-repo}
 
 Orchestration CLI of MSO4SC Project, based on Cloudify CLI. Its goal is to provide an interface to interact with a remote MSOOrchestrator instance. For more information, visit {uri-cloudify-cli}.
 
@@ -36,14 +40,14 @@ MSOOrchestrator-CLI offers a vagrant file and a docker image to easily start usi
 At {uri-docker-image}[Docker Hub] you can find the latest build image to start using the CLI.
 
 ----
-# docker run -it --name cli -v <PATH>/resources:/cli/resources mso4sc/msoorchestrator-cli -- bash
+# docker run -it --name cli -v <PATH>/croupier-resources:/cli/resources ari-apc-lab/croupier-cli -- bash
 [root@ec71ada311d6 cli]# exit
 # docker start -ai cli
 [root@ec71ada311d6 cli]# exit
 ----
 
 To build:
-`docker build -t mso4sc/msoorchestrator-cli .` 
+`docker build -t ari-apc-lab/croupier-cli .` 
 
 === Vagrant
 
