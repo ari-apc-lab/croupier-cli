@@ -1,10 +1,20 @@
 # Croupier CLI
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 Orchestration CLI of Croupier Project, based on Cloudify CLI. Its goal is to provide an interface to interact with a remote Croupier instance. For more information, visit <http://docs.getcloudify.org/4.1.0/cli/overview/>.
 
 > **Note**
 >
 > Originally developed under the H2020 project [Croupier](http://www.croupier.eu/): <https://github.com/ari-apc-lab/Croupier-CLI>
+
+## Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Croupier Installation](#croupier-installation)
+- [License](#license)
+- [Legal disclaimer](#legal-disclaimer)
 
 ## Installation
 
@@ -94,3 +104,15 @@ systemctl start firewalld
 ```
 
 To install the orchestrator, just execute in the CLI:+ `./bootstrap-manager.sh [Centos HOST] [Centos SSH USER] [Orchestrator NEW ADMIN USER] [Orchestrator NEW ADMIN PASSWORD]`
+
+## License
+
+Croupier is licensed under [Apache License, Version 2.0 (the License)](./LICENSE)
+
+## Legal disclaimer
+
+The open source software and source code are provide to you on an “AS IS” basis and Atos Spain SA disclaim any and all warranties and representations with respect to such software and related source code, whether express, implied, statutory or otherwise, including without limitation, any implied warranties of title, non-infringement, merchantability, satisfactory quality, accuracy or fitness for a particular purpose.
+
+Atos Spain SA shall not be liable to make any corrections to the open source software or source code, or to provide any support or assistance with respect to it without any previously specify agreement.
+
+Atos Spain SA disclaims any and all liability arising out of or in connection with the use of this software and/or source code
