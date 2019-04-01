@@ -41,9 +41,6 @@ ADD ./centos-cloudify-cli.sh ./
 RUN /bin/bash ./centos-cloudify-cli.sh
 RUN rm ./centos-cloudify-cli.sh
 
-# Bootstrap script
-ADD ./bootstrap-manager.sh ./
-
 # SSH Keys
 RUN mkdir ~/.ssh
 ADD check-ssh-keys.sh /

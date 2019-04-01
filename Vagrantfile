@@ -49,7 +49,6 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "file", source: "./check-ssh-keys.sh", destination: "/home/vagrant/check-ssh-keys.sh"
-  config.vm.provision "file", source: "./bootstrap-manager.sh", destination: "/home/vagrant/bootstrap-manager.sh"
   config.vm.provision "shell", path: "./centos-basic-deps.sh"
   config.vm.provision "shell", path: "./centos-python2.sh"
   config.vm.provision "shell", path: "./centos-cloudify-cli.sh"

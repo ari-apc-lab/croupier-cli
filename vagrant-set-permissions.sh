@@ -26,5 +26,4 @@
 # vagrant-set-permissions.sh
 
 
-chown -R vagrant:vagrant /opt/cfy/cloudify-manager-blueprints
 chmod +x /home/vagrant/*.sh
