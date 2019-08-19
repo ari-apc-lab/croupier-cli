@@ -22,7 +22,7 @@ Croupier-CLI offers a vagrant file and a docker image to easily start using the 
 
 ### Docker
 
-At [Docker Hub](https://hub.docker.com/r/croupier/msoorchestrator-cli/) you can find the latest build image to start using the CLI.
+At [Docker Hub](https://hub.docker.com/r/ariapclab/croupier-cli) you can find the latest build image to start using the CLI.
 
 ```console
 # docker run -it --name cli -v <PATH>/croupier-resources:/cli/resources ari-apc-lab/croupier-cli -- bash
