@@ -62,7 +62,7 @@ cfy executions start -b $ID uninstall # Revert the app instance
 To connect to a Croupier instance, run the following command with your user credentials and remote host or IP of the orchestrator. If you don’t have an orchestrator instance yet, follow [Croupier installation](#croupier-installation) first.
 
 ```bash
-cfy profile use [ORCHESTRATOR_IP] -t default_tenant -u [USER] -p [PASS]
+cfy profiles use [ORCHESTRATOR_IP] -t default_tenant -u [USER] -p [PASS]
 cfy status
 ```
 
@@ -115,4 +115,5 @@ The open source software and source code are provide to you on an “AS IS” ba
 
 Atos Spain SA shall not be liable to make any corrections to the open source software or source code, or to provide any support or assistance with respect to it without any previously specify agreement.
 
-Atos Spain SA disclaims any and all liability arising out of or in connection with the use of this software and/or source code
+Atos Spain SA disclaims any and all liability arising out of or in connection
+with the use of this software and/or source code

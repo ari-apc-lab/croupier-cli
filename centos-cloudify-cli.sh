@@ -25,10 +25,10 @@
 #
 # centos-cloudify-cli.sh
 
+set -e
 
-wget -q http://repository.cloudifysource.org/cloudify/19.01.24/community-release/cloudify-cli-community-19.01.24.rpm
+wget -q http://repository.cloudifysource.org/cloudify/19.07.18/community-release/cloudify-cli-community-19.07.18.rpm -O cfy.rpm
 
 ## Install Cloudify CLI package
-rpm -Uvh cloudify-*.rpm
-rm cloudify-*.rpm
-
+rpm -Uvh cfy.rpm
+rm cfy.rpm
