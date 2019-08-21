@@ -33,7 +33,8 @@ WORKDIR /cli
 
 # Basic dependencies
 RUN yum -y update
-RUN yum -y install yum-utils wget openssh-clients ntp epel-release python python-pip zip
+RUN yum -y install yum-utils wget openssh-clients ntp epel-release zip
+RUN yum -y install python python-pip
 RUN yum clean all
 RUN pip install -q wagon==0.6.1
 
