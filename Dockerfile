@@ -33,22 +33,18 @@ WORKDIR /cli
 
 # Basic dependencies
 RUN yum -y update
-RUN yum -y install yum-utils wget openssh-clients ntp
+RUN yum -y install yum-utils wget openssh-clients ntp epel-release python python-pip zip
 RUN yum clean all
+RUN pip install -q wagon==0.6.1
 
 # Cloudify-cli
-ADD ./centos-cloudify-cli.sh ./
-RUN /bin/bash ./centos-cloudify-cli.sh
-RUN rm ./centos-cloudify-cli.sh
-
-# SSH Keys
-RUN mkdir ~/.ssh
-ADD check-ssh-keys.sh /
-RUN chmod +x /check-ssh-keys.sh
+RUN wget -q http://repository.cloudifysource.org/cloudify/19.07.18/community-release/cloudify-cli-community-19.07.18.rpm -O ./cfy.rpm
+RUN rpm -Uvh cfy.rpm
+RUN rm -f cfy.rpm
 
 # Shared volume
 VOLUME ['/cli/resources']
 
-ENTRYPOINT ["bash", "-c", "/check-ssh-keys.sh && exec $@"]
+ENTRYPOINT ["bash", "-c", "exec $@"]
 CMD ["bash"]
 

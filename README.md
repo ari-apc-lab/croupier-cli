@@ -12,15 +12,12 @@ Orchestration CLI of Croupier Project, based on Cloudify CLI. Its goal is to pro
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Croupier Installation](#croupier-installation)
 - [License](#license)
 - [Legal disclaimer](#legal-disclaimer)
 
 ## Installation
 
-Croupier-CLI offers a vagrant file and a docker image to easily start using the command line. Besides it can be installed following [the docs](http://docs.getcloudify.org/4.1.0/installation/from-packages/).
-
-### Docker
+Croupier-CLI offers a docker image to easily start using the command line. Besides it can be installed following [the docs](https://docs.cloudify.co/4.5.0/install_maintain/installation/installing-cli/).
 
 At [Docker Hub](https://hub.docker.com/r/ariapclab/croupier-cli) you can find the latest build image to start using the CLI.
 
@@ -32,14 +29,6 @@ At [Docker Hub](https://hub.docker.com/r/ariapclab/croupier-cli) you can find th
 ```
 
 To build: `docker build -t ari-apc-lab/croupier-cli .`
-
-### Vagrant
-
-A vagrant file is provided to create a new Virtual Vox machine with the CLI inside.
-
-> **Note**
->
-> Modify the path `"../croupier-resources/blueprint-examples"` to bind the blueprint examples repository to your virtual machine. Comment the line if you don’t want to bind the examples.
 
 ## Usage
 
@@ -81,29 +70,6 @@ cfy blueprints delete $ID # Remove the blueprint
 ```
 
 You can find several examples and real applications in the [resources respository @ Github](https://github.com/ari-apc-lab/croupier-resources)
-
-## Croupier installation
-
-Croupier, based on cloudify, can be easily installed from this CLI.
-
-- Running instance of Croupier-CLI vagrant or docker image.
-
-- Centos 7 remote machine with at least 2 CPUs and 4 Gb of RAM (4 CPUs and 12 Gb RAM recommended), reachable by the CLI, with requiretty disabled, and no password for sudo command.
-
-  - Set `Defaults !requiretty` on sudoers file (`/etc/sudoers`)
-
-  - If user is not root, `echo '[USER] ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers`
-
-  - Check if firewalld is installed, and install it if not:
-
-```bash
-yum install firewalld
-systemctl unmask firewalld
-systemctl enable firewalld
-systemctl start firewalld
-```
-
-To install the orchestrator, just execute in the CLI:+ `./bootstrap-manager.sh [Centos HOST] [Centos SSH USER] [Orchestrator NEW ADMIN USER] [Orchestrator NEW ADMIN PASSWORD]`
 
 ## License
 
