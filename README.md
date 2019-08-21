@@ -51,7 +51,7 @@ cfy executions start -b $ID uninstall # Revert the app instance
 To connect to a Croupier instance, run the following command with your user credentials and remote host or IP of the orchestrator. If you don’t have an orchestrator instance yet, follow [Croupier installation](#croupier-installation) first.
 
 ```bash
-cfy profiles use [ORCHESTRATOR_IP] -t default_tenant -u [USER] -p [PASS]
+cfy profiles use [ORCHESTRATOR_IP] [--ssl] -t default_tenant -u [USER] -p [PASS]
 cfy status
 ```
 
